@@ -5,8 +5,14 @@ import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react'
 import axios from 'axios'
 import { API_ENDPOINTS } from '@/lib/api'
 
+interface User {
+  id: string
+  username: string
+  email: string
+}
+
 interface RegisterFormProps {
-  onSuccess: (user: any, token: string) => void
+  onSuccess: (user: User, token: string) => void
 }
 
 export function RegisterForm({ onSuccess }: RegisterFormProps) {
@@ -46,8 +52,9 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
         password: formData.password
       })
       onSuccess(response.data.user, response.data.token)
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Registration failed. Please try again.')
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { error?: string } } }
+      setError(error.response?.data?.error || 'Registration failed. Please try again.')
     } finally {
       setIsLoading(false)
     }

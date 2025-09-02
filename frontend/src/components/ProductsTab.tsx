@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Plus, Edit, Trash2, Search, Filter, Package } from 'lucide-react'
+import { Plus, Edit, Trash2, Search, Package } from 'lucide-react'
 import axios from 'axios'
 import { ProductForm } from './ProductForm'
 import { API_ENDPOINTS, getAuthHeaders } from '@/lib/api'

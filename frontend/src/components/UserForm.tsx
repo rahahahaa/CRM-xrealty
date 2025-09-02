@@ -53,8 +53,9 @@ export function UserForm({ user, onClose, onSuccess }: UserFormProps) {
         await axios.post(API_ENDPOINTS.USERS, formData, { headers })
       }
       onSuccess()
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Operation failed. Please try again.')
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { error?: string } } }
+      setError(error.response?.data?.error || 'Operation failed. Please try again.')
     } finally {
       setIsLoading(false)
     }

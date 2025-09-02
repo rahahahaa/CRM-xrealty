@@ -2,8 +2,13 @@
 
 import { LogOut, User } from 'lucide-react'
 
+interface User {
+  username: string
+  email: string
+}
+
 interface HeaderProps {
-  user: any
+  user: User | null
   onLogout: () => void
 }
 

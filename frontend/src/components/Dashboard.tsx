@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Users, Package, Plus } from 'lucide-react'
+import { Users, Package } from 'lucide-react'
 import { UsersTab } from './UsersTab'
 import { ProductsTab } from './ProductsTab'
 

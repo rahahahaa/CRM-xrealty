@@ -6,10 +6,16 @@ import { RegisterForm } from '@/components/RegisterForm'
 import { Dashboard } from '@/components/Dashboard'
 import { Header } from '@/components/Header'
 
+interface User {
+  id: string
+  username: string
+  email: string
+}
+
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLogin, setIsLogin] = useState(true)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const token = localStorage.getItem('token')

@@ -5,8 +5,14 @@ import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
 import axios from 'axios'
 import { API_ENDPOINTS } from '@/lib/api'
 
+interface User {
+  id: string
+  username: string
+  email: string
+}
+
 interface LoginFormProps {
-  onSuccess: (user: any, token: string) => void
+  onSuccess: (user: User, token: string) => void
 }
 
 export function LoginForm({ onSuccess }: LoginFormProps) {
@@ -26,8 +32,9 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
     try {
       const response = await axios.post(API_ENDPOINTS.LOGIN, formData)
       onSuccess(response.data.user, response.data.token)
-    } catch (err: any) {
-      setError(err.response?.data?.error || 'Login failed. Please try again.')
+    } catch (err: unknown) {
+      const error = err as { response?: { data?: { error?: string } } }
+      setError(error.response?.data?.error || 'Login failed. Please try again.')
     } finally {
       setIsLoading(false)
     }
