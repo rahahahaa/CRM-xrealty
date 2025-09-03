@@ -10,7 +10,12 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://crm-xrealty-w2o8.vercel.app',
+    'https://crm-xrealty-w2o8-9dug04o4c-rahul-bhats-projects.vercel.app',
+    process.env.CORS_ORIGIN
+  ].filter(Boolean),
   credentials: true
 }));
 app.use(morgan('combined'));
@@ -36,6 +41,7 @@ app.get('/health', (req, res) => {
 app.get('/', (req, res) => {
   res.send("✅ CRM-xRealty Backend API is Live. Use /health or API routes.");
 });
+
 
 // 404 handler
 app.use('*', (req, res) => {
