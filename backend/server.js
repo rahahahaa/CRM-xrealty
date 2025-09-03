@@ -32,6 +32,11 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running' });
 });
 
+// ✅ Root welcome route
+app.get('/', (req, res) => {
+  res.send("✅ CRM-xRealty Backend API is Live. Use /health or API routes.");
+});
+
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
