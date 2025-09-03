@@ -88,7 +88,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
             required
             value={formData.username}
             onChange={handleChange}
-            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
             placeholder="Enter your username"
           />
         </div>
@@ -107,7 +107,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
             placeholder="Enter your email"
           />
         </div>
@@ -126,7 +126,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
             required
             value={formData.password}
             onChange={handleChange}
-            className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+            className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
             placeholder="Enter your password"
           />
           <button
@@ -152,7 +152,7 @@ export function RegisterForm({ onSuccess }: RegisterFormProps) {
             required
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+            className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
             placeholder="Confirm your password"
           />
           <button

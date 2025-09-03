@@ -104,7 +104,7 @@ export function UserForm({ user, onClose, onSuccess }: UserFormProps) {
                   required
                   value={formData.username}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
                   placeholder="Enter username"
                 />
               </div>
@@ -123,7 +123,7 @@ export function UserForm({ user, onClose, onSuccess }: UserFormProps) {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
                   placeholder="Enter email address"
                 />
               </div>
@@ -140,7 +140,7 @@ export function UserForm({ user, onClose, onSuccess }: UserFormProps) {
                   name="role"
                   value={formData.role}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900"
                 >
                   <option value="user">User</option>
                   <option value="admin">Admin</option>
